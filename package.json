@@ -1,0 +1,31 @@
+{
+  "name": "1hash-crypto-gateway",
+  "version": "0.1.0",
+  "description": "Drop-in crypto checkout widget for Next.js — accept USDC, USDT, BTC, ETH and TON with on-chain payment verification.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./server": "./src/server.js",
+    "./styles.css": "./src/styles.css"
+  },
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "keywords": [
+    "crypto",
+    "payments",
+    "checkout",
+    "web3",
+    "nextjs",
+    "usdc",
+    "bitcoin",
+    "ethereum",
+    "ton"
+  ]
+}
