@@ -1,0 +1,231 @@
+/* 1hash.space — Crypto Checkout styles
+   Import once in your app, e.g. in app/layout.jsx:
+   import '1hash-crypto-gateway/styles.css';
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+.ohc {
+  --ohc-bg: #ffffff;
+  --ohc-border: #ececec;
+  --ohc-ink: #0a0a0a;
+  --ohc-muted: #6b6b6b;
+  --ohc-faint: #f6f6f6;
+  --ohc-success: #16a34a;
+  --ohc-error: #dc2626;
+  --ohc-radius: 20px;
+
+  width: 100%;
+  max-width: 380px;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  color: var(--ohc-ink);
+  box-sizing: border-box;
+}
+.ohc * { box-sizing: border-box; }
+
+.ohc-card {
+  background: var(--ohc-bg);
+  border: 1px solid var(--ohc-border);
+  border-radius: var(--ohc-radius);
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 12px 32px -16px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header: portal logo top-left */
+.ohc-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.ohc-logo-img { width: 22px; height: 22px; border-radius: 6px; object-fit: cover; }
+.ohc-logo-mark {
+  width: 22px; height: 22px; border-radius: 6px;
+  background: var(--ohc-ink); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; letter-spacing: -0.5px;
+}
+.ohc-portal-name { font-size: 13px; font-weight: 500; letter-spacing: -0.01em; }
+
+/* Product / amount block */
+.ohc-product { margin-bottom: 22px; }
+.ohc-product-name { font-size: 13px; color: var(--ohc-muted); margin-bottom: 6px; }
+.ohc-amount {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.ohc-amount-sub { font-size: 12px; color: var(--ohc-muted); margin-top: 4px; }
+
+/* Primary "Pay with Crypto" button */
+.ohc-pay-btn {
+  position: relative;
+  width: 100%;
+  background: var(--ohc-ink);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 18px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.ohc-pay-btn:hover { background: #1f1f1f; }
+.ohc-pay-btn:active { transform: scale(0.985); }
+.ohc-soon-badge {
+  position: absolute;
+  top: -9px;
+  right: 10px;
+  background: #fff;
+  color: var(--ohc-ink);
+  border: 1px solid var(--ohc-border);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* Back / step header */
+.ohc-step-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.ohc-back-btn {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--ohc-border);
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.ohc-back-btn:hover { background: var(--ohc-faint); }
+.ohc-step-title { font-size: 14px; font-weight: 500; }
+
+/* Coin grid */
+.ohc-coin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.ohc-coin-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--ohc-border);
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  text-align: left;
+}
+.ohc-coin-btn:hover { border-color: #d4d4d4; background: var(--ohc-faint); }
+.ohc-coin-logo-img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.ohc-coin-logo-fallback {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.ohc-coin-label { font-size: 14px; font-weight: 500; }
+
+/* Wallet input step */
+.ohc-field-label { font-size: 12px; color: var(--ohc-muted); margin-bottom: 8px; }
+.ohc-input {
+  width: 100%;
+  border: 1px solid var(--ohc-border);
+  border-radius: 10px;
+  padding: 13px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.ohc-input:focus { border-color: var(--ohc-ink); }
+.ohc-input-error { border-color: var(--ohc-error); }
+.ohc-error-text { font-size: 12px; color: var(--ohc-error); margin-top: 6px; }
+.ohc-continue-btn {
+  width: 100%;
+  margin-top: 16px;
+  background: var(--ohc-ink);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.ohc-continue-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* Verifying screen */
+.ohc-verifying { text-align: center; padding: 12px 4px 4px; }
+.ohc-coffee-wrap {
+  position: relative;
+  width: 84px; height: 84px;
+  margin: 0 auto 18px;
+}
+.ohc-coffee-gif { width: 100%; height: 100%; object-fit: contain; }
+.ohc-verifying-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+.ohc-verifying-sub { font-size: 12.5px; color: var(--ohc-muted); line-height: 1.5; max-width: 280px; margin: 0 auto; }
+.ohc-progress-track {
+  width: 100%; height: 3px; background: var(--ohc-faint);
+  border-radius: 999px; margin-top: 20px; overflow: hidden;
+}
+.ohc-progress-fill {
+  height: 100%; background: var(--ohc-ink); border-radius: 999px;
+  animation: ohc-progress 2.2s ease-in-out infinite;
+}
+@keyframes ohc-progress {
+  0% { width: 8%; margin-left: 0%; }
+  50% { width: 55%; margin-left: 20%; }
+  100% { width: 8%; margin-left: 92%; }
+}
+
+/* Result screens */
+.ohc-result { text-align: center; padding: 8px 4px 4px; }
+.ohc-result-icon {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.ohc-result-icon.success { background: #eafaf0; color: var(--ohc-success); }
+.ohc-result-icon.fail { background: #fdecec; color: var(--ohc-error); }
+.ohc-result-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+.ohc-result-sub { font-size: 12.5px; color: var(--ohc-muted); margin-bottom: 20px; }
+.ohc-tx-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;
+  border: 1px solid var(--ohc-border); border-radius: 10px;
+  padding: 10px 12px; margin-bottom: 18px; color: var(--ohc-muted);
+}
+.ohc-redirect-btn {
+  width: 100%;
+  border: none; border-radius: 12px;
+  padding: 14px 18px;
+  font-family: inherit; font-size: 14px; font-weight: 500;
+  cursor: pointer;
+}
+.ohc-redirect-btn.success { background: var(--ohc-ink); color: #fff; }
+.ohc-redirect-btn.fail { background: var(--ohc-faint); color: var(--ohc-ink); }
+
+.ohc-fade { animation: ohc-fade-in 0.25s ease both; }
+@keyframes ohc-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ohc-progress-fill, .ohc-fade { animation: none !important; }
+}
